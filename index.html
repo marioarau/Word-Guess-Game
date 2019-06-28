@@ -140,6 +140,7 @@
                     displayWordGuess(wordToGuess, wordGuessValue);
                     if (wordGuessValue.search("_") == -1) {
                         status = "Congratulation! You won!";
+                        targetDiv.textContent = status;
                     }
                     else {
                         //chances_remaining--;
