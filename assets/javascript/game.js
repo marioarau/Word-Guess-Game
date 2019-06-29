@@ -1,58 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+// JavaScript Document
 
-<head>
-    <meta charset="UTF-8">
-    <title>Word Guess Game</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-</head>
-
-<body>
-
- <div id="content">
- 	<div id="row">
-	    <div class="col-lg-2 mt-lg-2">
-    	</div>
-    	<div class="col-lg-8 mt-lg-2">
-    		<div id="header">
-        		<img src="assets/images/word_guess.jpg" width="800" class="header_image">
-		    </div>
-    	</div>
-    	<div class="col-lg-2 mt-lg-2">
-    	</div>
-	</div>
-    <!-- Here we create a word-options div -->
- 	<div id="row">
-	    <div class="col-lg-2 mt-lg-2">
-    	</div>
-	    <div class="col-lg-8 mt-lg-2">
-		    <div id="main">
-	    		<div id="word-won-lost"></div>
-		    	<div id="word-options"></div>
-	    		<div id="word-status">
-		    	    <div id="numGuessesRemaining">Number of Guesses Remaining: </div>
-        			<div id="word-chances-remaining">10</div>
-		    	</div>
-		    </div>
-   		</div>
-	    <div class="col-lg-2 mt-lg-2">
-    	</div>
-	</div>
- 	<div id="row">
-	    <div class="col-lg-2 mt-lg-2">
-    	</div>
-	    <div class="col-lg-8 mt-lg-2">
-	        <div id="restart">
-	        	<input type="button" value="Restart" id="restart-button">
-	        </div>
-   		</div>
-	    <div class="col-lg-2 mt-lg-2">
-    	</div>
-	</div>
-    <script type="text/javascript">
-
-        // Array holds all of the drinks available
+        // Array holds all of the words available
         var wordList = [
             "Coffee",
             "Espresso",
@@ -75,11 +23,6 @@
         var targetDiv = document.getElementById("word-options");
         var wonLostDiv = document.getElementById("word-won-lost");
         var chancesRemainDiv = document.getElementById("word-chances-remaining");
-        var restartBtn = document.getElementById("restart-button");
-		document.getElementById("restart-button").onclick = function () {
-        	console.log("click restart button");
-			init_game();
-		}
         var wordGuessValue = "";
         var lettersGuessed = [];
         var chances_remaining = 10;
@@ -90,46 +33,14 @@
         function isLetter(str) {
             return str.length === 1 && str.match(/[a-z]/i);
         }
-		
-		function init_game() {
-
-        	console.log("init_game");
-			targetDiv.textContent = "";
-			wonLostDiv.textContent = "";
-			chancesRemainDiv.textContent = "10";
-			chances_remaining = 10;
-			lettersGuessed = [];
-			gameOver = false;
-			
-			numWords = wordList.length;
-        	//console.log(numWords);
-
-        	rndNum = Math.floor(Math.random() * numWords);
-        	//console.log(rndNum);
-
-	        wordToGuess = wordList[rndNum];
-    	    wordToGuess = wordToGuess.toLowerCase();
-
-        	// initialize word to guess to underscores
-        	console.log(wordToGuess);
-        	numLetters = wordToGuess.length;
-        	console.log(numLetters);
-
-        	wordGuessValue = "";
-        	for (i = 0; i < wordToGuess.length; i++) {
-            	wordGuessValue = wordGuessValue + "_";
-        	}
-	        console.log("wordGuessValue: " + wordGuessValue)
-    	    displayWordGuess(wordToGuess, wordGuessValue);
-		}
 
         function displayWordGuess(wordToGuess, wordGuessValue) {
 
             var wordToDisplay = "";
-            //console.log("--------------------");
-            //console.log("wordToGuess="+wordToGuess);
-            //console.log("wordGuessValue="+wordGuessValue);
-            //console.log("wordGuessValue.length="+wordGuessValue.length);
+            console.log("--------------------");
+            console.log("wordToGuess="+wordToGuess);
+            console.log("wordGuessValue="+wordGuessValue);
+            console.log("wordGuessValue.length="+wordGuessValue.length);
             if (wordGuessValue.length == 0) {
                 for (i = 0; i < wordToGuess.length; i++) {
                     wordToDisplay = wordToDisplay + wordGuessValue[i] + "_ ";
@@ -140,9 +51,9 @@
                     wordToDisplay = wordToDisplay + wordGuessValue[i] + " ";
                 }
             }
-            //console.log("String to Display: "+wordToDisplay);
+            console.log("String to Display: "+wordToDisplay);
             targetDiv.textContent = wordToDisplay;
-            //console.log("--------------------");
+            console.log("--------------------");
             return;
         }
 
@@ -150,8 +61,27 @@
         // HINT: You will need to use each of the following methods: createElement, textContent, appendChild
         // ...
 
-		init_game();
+        numWords = wordList.length;
+        //console.log(numWords);
 
+        rndNum = Math.floor(Math.random() * numWords);
+        //console.log(rndNum);
+
+        wordToGuess = wordList[rndNum];
+        wordToGuess = wordToGuess.toLowerCase();
+
+        // initialize word to guess to underscores
+        console.log(wordToGuess);
+        numLetters = wordToGuess.length;
+        console.log(numLetters);
+
+        wordGuessValue = "";
+        for (i = 0; i < wordToGuess.length; i++) {
+            wordGuessValue = wordGuessValue + "_";
+        }
+
+        console.log("wordGuessValue: " + wordGuessValue)
+        displayWordGuess(wordToGuess, wordGuessValue);
         document.onkeyup = function (event) {
 
             if (gameOver == true) {
@@ -202,8 +132,3 @@
                 return;
             }
         }
-    </script>
-</div>
-</body>
-
-</html>

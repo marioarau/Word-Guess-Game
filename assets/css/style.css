@@ -5,7 +5,7 @@ body {
     font-size: 18px;
     line-height: 150%;
     color: #777;
-    background-color: #fff;
+    background-color: #000;
 	/* For heading fonts use font-family: 'Georgia', Times, Times New Roman, serif;.
 	For all other fonts use 'Arial', 'Helvetica Neue', Helvetica, sans-serif;. */
   }
@@ -29,16 +29,61 @@ body {
     color: #0080C0;
   } 
   #header {
-    background-color: #aaa;
+    background-color: #000;
+    margin: 0 auto;
     width: 100%;
   }
-  .header_image {
+  #restart {
+	display: block;
+    background-color: #000;
+    margin: 10px auto;
+    width: 60%;
+	font-size: 24px;
+  }
+  #restart-button {
+	display: block;
+    margin: 10px auto;
+	font-size: 24px;
+	padding: 5px 12px;
+  }
+  #numGuessesRemaining {
+	float: left;
+    background-color: #000;
+	font-size: 24px;
+  }
+  #word-chances-remaining {
+	float:left;
+    background-color: #000;
+    font-size: 24px;
+    font-weight: bold;
+    color: grey;
+    margin: 0px;
+    padding: 0 0 0 12px; 
+  }
+  #main {
+    background-color: #000;
+	width: 48%;
+	display: block;
     margin: 0 auto;
+  }
+  .header_image {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
     padding: 10px;
   }
 
   #word-options {
-    font-size: 52px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 48px;
+    font-weight: bold;
+    color: grey;
+    margin: 0 0 0 36px;
+    padding: 18px;
+  }
+  #word-won-lost {
     font-weight: bold;
     color: grey;
     margin: 0 0 0 36px;
@@ -50,18 +95,10 @@ body {
     margin: 0 0 0 36px;
     padding: 18px;
   }
-  #word-chances-remaining {
-    font-size: 32px;
-    font-weight: bold;
-    color: grey;
-    margin: 0 0 0 36px;
-    padding: 18px;
-
+  .clear {
+  	clear:both;
   }
-.clear {
-  clear:both;
-}
-#footer {
+  #footer {
 	background-color: #666;
 	border-top: 8px solid #4aaaa5;
 	position:relative;
@@ -70,4 +107,4 @@ body {
 	text-align:center;
 	color:#CCC;
 	font-size:small;
-}
+  }
