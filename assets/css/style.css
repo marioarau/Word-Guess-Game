@@ -2,7 +2,7 @@ body {
     padding: 0;
     margin: 0;
 	  font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
-    font-size: 18px;
+    font-size: 1.5em;
     line-height: 150%;
     color: #777;
     background-color: #000;
@@ -34,27 +34,27 @@ body {
     width: 100%;
   }
   #restart {
-	display: block;
+	/* display: block; */
     background-color: #000;
-    margin: 10px auto;
+    margin: .8em auto;
     width: 60%;
-	font-size: 24px;
+	font-size: .6em;
   }
   #restart-button {
-	display: block;
+	/* display: block; */
     margin: 10px auto;
-	font-size: 24px;
+	font-size: 2em;
 	padding: 5px 12px;
   }
   #numGuessesRemaining {
 	float: left;
     background-color: #000;
-	font-size: 24px;
+	font-size: 1em;
   }
   #word-chances-remaining {
 	float:left;
     background-color: #000;
-    font-size: 24px;
+    font-size: 1em;
     font-weight: bold;
     color: grey;
     margin: 0px;
@@ -62,7 +62,7 @@ body {
   }
   #main {
     background-color: #000;
-	width: 48%;
+	width: 70%;
 	display: block;
     margin: 0 auto;
   }
@@ -77,13 +77,32 @@ body {
 	display: block;
     margin-left: auto;
     margin-right: auto;
-    font-size: 48px;
+    font-size: 1.6em;
     font-weight: bold;
     color: grey;
     margin: 0 0 0 36px;
     padding: 18px;
   }
-  #word-won-lost {
+  #games-won-lost {
+    font-weight: bold;
+    color: grey;
+    margin: 0 0 0 36px;
+    padding: 18px;
+  }
+  #wins {
+    display: block;
+    float: left;
+    background-color: #000;
+    font-size: 1em;
+  }
+  #losses {
+    display: block;
+    float: left;
+    background-color: #000;
+    font-size: 1em;
+    margin-left: 1em;
+  }
+        #word-won-lost {
     font-weight: bold;
     color: grey;
     margin: 0 0 0 36px;
@@ -92,8 +111,8 @@ body {
   #word-status {
     font-weight: bold;
     color: grey;
-    margin: 0 0 0 36px;
-    padding: 18px;
+    margin: 0 0 0 1.2em;
+    padding: 1em;
   }
   .clear {
   	clear:both;
