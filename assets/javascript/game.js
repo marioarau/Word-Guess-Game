@@ -36,7 +36,7 @@ document.getElementById("restart-button").onclick = function () {
     init_game();
 }
 var wordGuessValue = "";
-var lettersGuessed = [];
+var lettersGuessed = "";
 var chances_remaining = 10;
 var gameOver = false;
 
@@ -54,7 +54,7 @@ function init_game() {
     wonLostDiv.textContent = "";
     chancesRemainDiv.textContent = "10";
     chances_remaining = 10;
-    lettersGuessed = [];
+    lettersGuessed = "";
     gameOver = false;
     
     numWords = wordList.length;
@@ -131,14 +131,14 @@ document.onkeyup = function (event) {
     // if the key pressed is a letter we do something otherwise we ignore.
     if (isLetter(userGuess)) {
         console.log("userGuess is a letter: " + userGuess)
-        lettersGuessed.push(userGuess);
-        console.log("lettersGuessed: " + lettersGuessed)
         // search word for letter.
         var n = wordToGuess.search(userGuess);
         console.log("letter in word: " + n);
         // letter not found
         if (n == -1) {
-            lettersGuessed.push(userGuess);
+            console.log("lettersGuessed: " + lettersGuessed)
+            lettersGuessed = lettersGuessed + userGuess;
+            console.log("lettersGuessed: " + lettersGuessed)
             incorrectLettersDiv.textContent = "Incorrect Letters Guessed: "+lettersGuessed;
             console.log("letter not in word")
             chances_remaining--;
