@@ -150,6 +150,12 @@ document.onkeyup = function (event) {
                 wonLostDiv.textContent="Sorry you lost! Try again!";
                 gameOver= true;
                 displayWinsLosses();
+                var delayInMilliseconds = 4000; //1 second
+
+                setTimeout(function() {
+                    init_game();
+                }, delayInMilliseconds);
+
             }
         }
         else {
