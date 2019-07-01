@@ -57,6 +57,7 @@ function init_game() {
     lettersGuessed = "";
     gameOver = false;
     
+    incorrectLettersDiv.textContent = "";
     numWords = wordList.length;
     //console.log(numWords);
 
